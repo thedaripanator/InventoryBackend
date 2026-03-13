@@ -2,13 +2,15 @@ package com.Inventory.Inventory.Model;
 
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
+@Data
 public class Products {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private String name;
 
