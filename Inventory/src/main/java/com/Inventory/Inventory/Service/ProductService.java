@@ -1,5 +1,6 @@
 package com.Inventory.Inventory.Service;
 
+import com.Inventory.Inventory.Model.Category;
 import com.Inventory.Inventory.Model.Products;
 import com.Inventory.Inventory.Repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,5 +51,14 @@ public class ProductService {
     public List<Products> findByprice(Double price1, Double price2) {
 //        List<Products> list=new ArrayList<>();
         return repo.findBypriceBetween(price1,price2);
+    }
+
+    public List<Products> getAllProducts() {
+        return repo.findAll();
+    }
+
+    public List<Products> getminimun() {
+
+        return repo.findByQuantityLessThan(5);
     }
 }

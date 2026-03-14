@@ -1,5 +1,6 @@
 package com.Inventory.Inventory.Controller;
 
+import com.Inventory.Inventory.Model.Category;
 import com.Inventory.Inventory.Model.Products;
 import com.Inventory.Inventory.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,5 +46,15 @@ public class ProductController {
     public List<Products> findByprice(@PathVariable Double price1,@PathVariable Double price2){
         return service.findByprice(price1,price2);
     }
+    @GetMapping("/all")
+    public List<Products> getAllProducts(){
+        return service.getAllProducts();
+    }
+
+    @GetMapping("/minStock")
+    public List<Products> getMinStock(){
+        return service.getminimun();
+    }
+
 
 }
