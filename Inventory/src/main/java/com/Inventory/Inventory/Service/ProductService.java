@@ -5,6 +5,7 @@ import com.Inventory.Inventory.Repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -33,10 +34,21 @@ public class ProductService {
     }
 
     public List<Products> getProductsByCategory(int  id) {
+
         return repo.findByCategoryId(id);
     }
 
     public List<Products> getProductsByName(String name) {
         return repo.findByName(name);
+    }
+
+    public List<Products> getProductsByCategoryname(String name) {
+        return repo.findByCategoryName(name);
+
+    }
+
+    public List<Products> findByprice(Double price1, Double price2) {
+//        List<Products> list=new ArrayList<>();
+        return repo.findBypriceBetween(price1,price2);
     }
 }

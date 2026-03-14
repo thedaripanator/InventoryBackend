@@ -33,9 +33,17 @@ public class ProductController {
         return service.getProductsByCategory(id);
     }
 
-    @GetMapping("/Byname/{name}")
+    @GetMapping("/name/{name}")
     public List<Products> fingByName(@PathVariable String name){
         return service.getProductsByName(name);
+    }
+    @GetMapping("/categoryname/{name}")
+    public List<Products> findByCategoryName(@PathVariable String name){
+        return service.getProductsByCategoryname(name);
+    }
+    @GetMapping("/price/{price1}/{price2}")
+    public List<Products> findByprice(@PathVariable Double price1,@PathVariable Double price2){
+        return service.findByprice(price1,price2);
     }
 
 }
