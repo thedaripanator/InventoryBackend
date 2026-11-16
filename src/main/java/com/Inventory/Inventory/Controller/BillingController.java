@@ -15,7 +15,7 @@ public class BillingController {
 
     @GetMapping("/health")
     public String health(){
-        System.out.println("Running...");
+        return "Running...";
     }
 
     @Autowired
