@@ -13,6 +13,11 @@ import java.util.List;
 @RequestMapping("/billing")
 public class BillingController {
 
+    @GetMapping("/health")
+    public String health(){
+        System.out.println("Running...");
+    }
+
     @Autowired
     private BillingService service;
 
